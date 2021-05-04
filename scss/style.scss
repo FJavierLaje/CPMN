@@ -1,0 +1,412 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.dark{
+    background-color: #2b2b2b;
+    color: #ffffff;
+}
+
+.dark a{
+    color: #ffffff;
+    text-decoration: none;    
+}
+
+.normalGrad{
+    background-image: linear-gradient(to bottom, #d7e7e6 , #56a8a0);
+    color: #000000;
+}
+
+.light{
+    background-color: #d7e7e6;
+    color:#2b2b2b
+}
+
+.inLine{
+    display: inline-block;
+}
+
+
+@mixin divMain($divDisplay, $divDirection, $divPadding) {
+    display: $divDisplay;
+    @if $divDisplay == flex{
+        flex-direction: $divDirection;
+    }
+    padding: $divPadding;
+}
+
+
+.divMainIndex{
+    @include divMain(flex, column, 20px 0 20px 0);
+    // display: flex;
+    // flex-direction: column;
+    // padding: 20px 0 20px 0;
+}
+
+.divMainAboutUs{
+    @include divMain(flex, column, 0px 20% 20px 20%);
+    // display: flex;
+    // flex-direction: column;
+    // padding: 20px 20% 20px 20%;
+}
+
+.divMainStaff{
+    @extend .divMainAboutUs;
+    // display: flex;
+    // flex-direction: column;
+    // padding: 20px 20% 20px 20%;
+}
+
+.divMainServices{
+    @include divMain(flex, column, 0px 20% 20px 20%);
+    // display: flex;
+    // flex-direction: column;
+    // padding: 20px 20% 20px 20%;
+}
+
+.divMainContact{
+    @include divMain(flex, column, 10px 10% 10px 10%);
+    // display: flex;
+    // flex-direction: column;
+    // padding: 10px 10% 10px 10%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.noBullet{
+    list-style: none;
+}
+
+
+
+
+//-------------
+// MÓDULOS BEM
+//-------------
+
+.card{
+    &__img{
+        display: block;
+        width: auto;
+        height: auto;
+    }
+
+    &__content{
+        background-color: #ffffff;
+        padding: 0px 20px 0px 20px;
+    }
+
+    &__title{
+        color: #000000;
+        background-color: #ffffff;
+        text-align: center;
+    }
+
+    &__text{
+        color: #000000;
+        background-color: #ffffff;
+    }
+}
+
+.footerInfo{
+    &__list{
+        list-style-type: none;
+        font-size: large;
+        padding: 0;
+    }
+
+    &__listItem{
+        color: #ffffff;
+        font-family: 'Inconsolata', monospace;
+        padding: 0;
+        font-size: 1rem;
+
+        &--horizontal{
+            display: inline-block;
+            font-size: 2rem;
+        }
+    }
+}
+
+.services{
+    &__title{
+        padding-bottom: 10px;
+        font-family: 'Roboto', sans-serif;
+        text-decoration: underline;
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    &__img{
+        width:196px;
+        height:175px;
+    }
+
+    &__text{
+        text-align: justify;
+        padding: 20px;
+    }
+}
+
+.staff{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+
+    &__professional{
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: auto
+    }
+
+    &__title{
+        color: #000000;
+        background-color: #ffffff;
+        text-align: center;
+    }
+
+    &__text{
+        text-align: justify;
+        padding: 20px;
+    }
+}
+
+.schedule{
+    border: 1px solid #2b2b2b;
+
+    &__tr{
+        text-align: center;
+    }
+
+    &__th{
+        background-color: #2b2b2b;
+        color: #ffffff;
+    }
+
+    &__td{
+        background-color:#b8b8b8;
+        color: #000000;
+    }
+}
+
+.contact{
+
+    &__names{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__media{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.motive{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: medium;
+
+    &__legend{
+        font-size: medium;
+    }
+
+    &__message{
+        display: flex;
+        flex-direction: column;
+        justify-content: first baseline;
+    }
+}
+
+.receiveNews{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    &__buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+// ----------------
+// FIN MODULOS BEM
+// ----------------
+
+
+
+
+#gridBody{
+    display: grid;
+    grid-template-columns: 254px auto;
+    grid-template-rows: 101px auto auto 130px;
+    grid-template-areas:
+                        "header menu"
+                        "banner banner"
+                        "main main"
+                        "footer footer";
+}
+
+#carouselBanner{
+    grid-area: banner;
+    display: flex;
+    margin: 0;
+}
+
+#h1Index{
+    font-size: 40px;
+}
+
+
+
+header{
+    grid-area: header;
+    padding: 20px;
+    
+}
+
+nav{
+    grid-area: menu;
+    padding-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+h1{
+    text-align: center;
+    padding-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+}
+
+
+p{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+hr{
+    margin: 20px 0px 20px 0px;
+}
+
+
+main{
+    grid-area: main;
+    margin: 0;
+}
+
+
+main div{
+    margin: 0;
+}
+
+
+footer{
+    grid-area: footer;
+}
+
+
+@media only screen and (max-width: 768px){
+    #gridBody{
+        grid-template-columns: 100%;
+        grid-template-rows: 101px auto auto auto auto;
+        grid-template-areas:
+                            "header"
+                            "menu"
+                            "banner"
+                            "main"
+                            "footer";
+    }
+
+    .divMainContact{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 1% 20px 1%;
+    }
+
+    .divNameSurname{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .divMailPhone{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    main div div div iframe{
+        width:450px;
+        height: 300px;
+    }
+
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .staff{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 15px;
+    
+        &__professional{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 480px){
+    #gridBody{
+        grid-template-columns: 100%;
+        grid-template-rows: 101px auto auto auto auto;
+        grid-template-areas:
+                            "header"
+                            "menu"
+                            "banner"
+                            "main"
+                            "footer";
+    }
+
+    .divMainServices{
+        padding: 20px 5% 20px 5%;
+    }
+
+    .divMainContact{
+        padding: 20px 5% 20px 5%;
+    }
+    
+    main div div div iframe{
+        width:300px;
+        height: 300px;
+    }
+
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+
+}
