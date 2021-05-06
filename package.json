@@ -1,14 +1,14 @@
 {
-  "name": "desafio-11",
+  "name": "preentrega4",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sitio web para el CPMN, desarrollado como proyecto general del curso de diseño web dictado por CODERHOUSE",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css":"node-sass --include-path scss scss/style.scss css/style.css",
     "watch-css":"nodemon -e scss -x \"npm run build-css\""
   },
-  "author": "",
+  "author": "F. Javier Laje",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^5.0.0",
